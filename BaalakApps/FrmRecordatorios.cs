@@ -686,7 +686,7 @@ namespace Baalak_Apps
 
         private async void BtnIniciarEnvios_Click(object sender, EventArgs e)
         {
-            if (BtnConnection.Text == "Connected to" + TxtCenter.Texts)
+            if (BtnConnection.Text == "Connected to " + TxtCenter.Texts)
             {
                 if (TxtMensaje.Text != "")
                 {
