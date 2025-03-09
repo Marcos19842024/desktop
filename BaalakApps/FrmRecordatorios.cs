@@ -1014,7 +1014,7 @@ namespace Baalak_Apps
         #region TextBoxs
         private void TxtCenter_TextsChanged(object sender, EventArgs e)
         {
-            BaalakApps.Properties.Settings.Default.Center = TxtIp.Texts;
+            BaalakApps.Properties.Settings.Default.Center = TxtCenter.Texts;
             BaalakApps.Properties.Settings.Default.Save();
         }
 
