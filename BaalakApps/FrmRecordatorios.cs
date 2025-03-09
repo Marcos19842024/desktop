@@ -639,11 +639,7 @@ namespace Baalak_Apps
             {
                 BtnConnection.Text = "Conectando...";
                 await GetStatusAsync();
-                if (BtnConnection.Text == "Connected to " + TxtCenter.Texts && CbClientes.Items.Count > 0)
-                {
-                    BtnIniciarEnvios.Enabled = true;
-                }
-                else
+                if (BtnConnection.Text != "Connected to " + TxtCenter.Texts)
                 {
                     Thread.Sleep(3000);
                     BtnConnection.Text = "Conectarse a WhatsApp";
