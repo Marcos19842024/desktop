@@ -886,11 +886,11 @@ namespace Baalak_Apps
                         if (IncluirMO.Checked)
                         {
                             CargarMensajeOpcional();
-                            TxtMensaje.Text = "¡Hola " + ((Cliente)CbClientes.SelectedItem).Nombre + "!\r\n\r\nLa Clínica Veterinaria" + TxtCenter.Texts + ", le informa que " + ListPets() + "\r\n\r\n" + MensajeOpcional;
+                            TxtMensaje.Text = "¡Hola " + ((Cliente)CbClientes.SelectedItem).Nombre + "!\r\n\r\nLa Clínica Veterinaria " + TxtCenter.Texts + ", le informa que " + ListPets() + "\r\n\r\n" + MensajeOpcional;
                         }
                         else
                         {
-                            TxtMensaje.Text = "¡Hola " + ((Cliente)CbClientes.SelectedItem).Nombre + "!\r\n\r\nLa Clínica Veterinaria" + TxtCenter.Texts + ", le informa que " + ListPets();
+                            TxtMensaje.Text = "¡Hola " + ((Cliente)CbClientes.SelectedItem).Nombre + "!\r\n\r\nLa Clínica Veterinaria " + TxtCenter.Texts + ", le informa que " + ListPets();
                         }
                     }
                     else
