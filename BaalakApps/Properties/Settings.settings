@@ -1,0 +1,46 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="BaalakApps.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ReminderBackColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">White</Value>
+    </Setting>
+    <Setting Name="ReminderForeColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">60, 120, 160</Value>
+    </Setting>
+    <Setting Name="ReminderForeColorPdf" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">60, 120, 160</Value>
+    </Setting>
+    <Setting Name="MsjOpc" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /&gt;</Value>
+    </Setting>
+    <Setting Name="ReportBackColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">White</Value>
+    </Setting>
+    <Setting Name="ReportForeColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">60, 120, 160</Value>
+    </Setting>
+    <Setting Name="ReportForeColorPdf" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">60, 120, 160</Value>
+    </Setting>
+    <Setting Name="Proveedores" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;string&gt;NUEVA WALMART DE MEXICO&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="Conceptos" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;string&gt;ENVIOS DE PAQUETERIA&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="Url" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0.0.0.0</Value>
+    </Setting>
+    <Setting Name="Center" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Clinica veterinaria</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
