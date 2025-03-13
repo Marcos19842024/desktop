@@ -48,7 +48,7 @@
             this.PanelConexion = new System.Windows.Forms.Panel();
             this.Linkqr = new System.Windows.Forms.LinkLabel();
             this.BtnConnection = new FontAwesome.Sharp.IconButton();
-            this.TxtIp = new CustomControls.CustomTextBox();
+            this.TxtId = new CustomControls.CustomTextBox();
             this.TxtCenter = new CustomControls.CustomTextBox();
             this.BtnConexion = new FontAwesome.Sharp.IconButton();
             this.PanelMde = new System.Windows.Forms.Panel();
@@ -64,8 +64,8 @@
             this.GbMensajeOpcional = new System.Windows.Forms.GroupBox();
             this.TxtMensajeOpcional = new System.Windows.Forms.TextBox();
             this.GbAdjuntar = new System.Windows.Forms.GroupBox();
-            this.BtnAdjuntar = new FontAwesome.Sharp.IconButton();
             this.LbFileName = new System.Windows.Forms.ListBox();
+            this.BtnAdjuntar = new FontAwesome.Sharp.IconButton();
             this.TAbrir = new System.Windows.Forms.Timer(this.components);
             this.TCerrar = new System.Windows.Forms.Timer(this.components);
             this.GbCliente = new System.Windows.Forms.GroupBox();
@@ -360,7 +360,7 @@
             this.PanelConexion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
             this.PanelConexion.Controls.Add(this.Linkqr);
             this.PanelConexion.Controls.Add(this.BtnConnection);
-            this.PanelConexion.Controls.Add(this.TxtIp);
+            this.PanelConexion.Controls.Add(this.TxtId);
             this.PanelConexion.Controls.Add(this.TxtCenter);
             this.PanelConexion.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelConexion.Location = new System.Drawing.Point(3, 75);
@@ -415,34 +415,34 @@
             this.BtnConnection.MouseLeave += new System.EventHandler(this.BtnConnection_MouseLeave);
             this.BtnConnection.MouseMove += new System.Windows.Forms.MouseEventHandler(this.BtnConnection_MouseMove);
             // 
-            // TxtIp
+            // TxtId
             // 
-            this.TxtIp.AllowDrop = true;
-            this.TxtIp.BackColor = System.Drawing.SystemColors.Window;
-            this.TxtIp.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.TxtIp.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.TxtIp.BorderRadius = 1;
-            this.TxtIp.BorderSize = 2;
-            this.TxtIp.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.TxtIp.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.TxtIp.Dock = System.Windows.Forms.DockStyle.Top;
-            this.TxtIp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.TxtIp.ForeColor = System.Drawing.Color.Blue;
-            this.TxtIp.IsReadOnly = false;
-            this.TxtIp.Location = new System.Drawing.Point(25, 23);
-            this.TxtIp.Margin = new System.Windows.Forms.Padding(0);
-            this.TxtIp.Multiline = false;
-            this.TxtIp.Name = "TxtIp";
-            this.TxtIp.Padding = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.TxtIp.PasswordChar = false;
-            this.TxtIp.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.TxtIp.PlaceholderText = "Ip";
-            this.TxtIp.Size = new System.Drawing.Size(0, 23);
-            this.TxtIp.TabIndex = 25;
-            this.TxtIp.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtIp.Texts = "";
-            this.TxtIp.UnderlinedStyle = true;
-            this.TxtIp.TextsChanged += new System.EventHandler(this.TxtIp_TextsChanged);
+            this.TxtId.AllowDrop = true;
+            this.TxtId.BackColor = System.Drawing.SystemColors.Window;
+            this.TxtId.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.TxtId.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.TxtId.BorderRadius = 1;
+            this.TxtId.BorderSize = 2;
+            this.TxtId.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.TxtId.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.TxtId.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TxtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.TxtId.ForeColor = System.Drawing.Color.Blue;
+            this.TxtId.IsReadOnly = false;
+            this.TxtId.Location = new System.Drawing.Point(25, 23);
+            this.TxtId.Margin = new System.Windows.Forms.Padding(0);
+            this.TxtId.Multiline = false;
+            this.TxtId.Name = "TxtId";
+            this.TxtId.Padding = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.TxtId.PasswordChar = false;
+            this.TxtId.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.TxtId.PlaceholderText = "Teléfono";
+            this.TxtId.Size = new System.Drawing.Size(0, 23);
+            this.TxtId.TabIndex = 25;
+            this.TxtId.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TxtId.Texts = "";
+            this.TxtId.UnderlinedStyle = true;
+            this.TxtId.TextsChanged += new System.EventHandler(this.TxtId_TextsChanged);
             // 
             // TxtCenter
             // 
@@ -725,6 +725,21 @@
             this.GbAdjuntar.TabStop = false;
             this.GbAdjuntar.Text = "Archivos adjuntos";
             // 
+            // LbFileName
+            // 
+            this.LbFileName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.LbFileName.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LbFileName.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LbFileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbFileName.ForeColor = System.Drawing.Color.White;
+            this.LbFileName.FormattingEnabled = true;
+            this.LbFileName.Location = new System.Drawing.Point(3, 43);
+            this.LbFileName.Name = "LbFileName";
+            this.LbFileName.Size = new System.Drawing.Size(179, 121);
+            this.LbFileName.Sorted = true;
+            this.LbFileName.TabIndex = 1;
+            this.LbFileName.SelectedIndexChanged += new System.EventHandler(this.LbFileName_SelectedIndexChanged);
+            // 
             // BtnAdjuntar
             // 
             this.BtnAdjuntar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(120)))), ((int)(((byte)(160)))));
@@ -753,21 +768,6 @@
             this.BtnAdjuntar.Click += new System.EventHandler(this.BtnAdjuntar_Click);
             this.BtnAdjuntar.MouseLeave += new System.EventHandler(this.BtnAdjuntar_MouseLeave);
             this.BtnAdjuntar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.BtnAdjuntar_MouseMove);
-            // 
-            // LbFileName
-            // 
-            this.LbFileName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.LbFileName.Cursor = System.Windows.Forms.Cursors.Default;
-            this.LbFileName.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LbFileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LbFileName.ForeColor = System.Drawing.Color.White;
-            this.LbFileName.FormattingEnabled = true;
-            this.LbFileName.Location = new System.Drawing.Point(3, 43);
-            this.LbFileName.Name = "LbFileName";
-            this.LbFileName.Size = new System.Drawing.Size(179, 121);
-            this.LbFileName.Sorted = true;
-            this.LbFileName.TabIndex = 1;
-            this.LbFileName.SelectedIndexChanged += new System.EventHandler(this.LbFileName_SelectedIndexChanged);
             // 
             // TAbrir
             // 
@@ -1086,7 +1086,7 @@
         private System.Windows.Forms.GroupBox GbAdjuntar;
         private System.Windows.Forms.ListBox LbFileName;
         private System.Windows.Forms.CheckBox CheckAdjuntar;
-        private CustomControls.CustomTextBox TxtIp;
+        private CustomControls.CustomTextBox TxtId;
         private FontAwesome.Sharp.IconButton BtnConnection;
         private FontAwesome.Sharp.IconButton BtnUpload;
         private System.Windows.Forms.CheckBox CheckNot;

@@ -114,7 +114,7 @@ namespace Baalak_Apps
             {
                 var request = new HttpRequestMessage
                 {
-                    RequestUri = new Uri(url + "/delete/" + FileName),
+                    RequestUri = new Uri(url + "delete/" + FileName),
                     Method = HttpMethod.Delete
                 };
                 request.Headers.Add("Accept", "*/*");
@@ -157,7 +157,7 @@ namespace Baalak_Apps
                 var bodyString = JsonConvert.SerializeObject(JF);
                 var request = new HttpRequestMessage
                 {
-                    RequestUri = new Uri(url + "/send/" + TxtCenter.Texts),
+                    RequestUri = new Uri(url + "send/" + TxtCenter.Texts + "/" + TxtId.Texts),
                     Method = HttpMethod.Post
                 };
                 request.Headers.Add("Accept", "*/*");
@@ -183,7 +183,7 @@ namespace Baalak_Apps
             {
                 var request = new HttpRequestMessage
                 {
-                    RequestUri = new Uri(url + "/status/" + TxtCenter.Texts),
+                    RequestUri = new Uri(url + "status/" + TxtCenter.Texts + "/" + TxtId.Texts),
                     Method = HttpMethod.Get
                 };
                 request.Headers.Add("Accept", "*/*");
@@ -209,7 +209,7 @@ namespace Baalak_Apps
                     var fileStream = File.OpenRead(file.Path);
                     requestContent.Add(new StreamContent(fileStream), "files", file.Name);
                 }
-                var response = await Client.PostAsync(url + "/upload",requestContent);
+                var response = await Client.PostAsync(url + "upload",requestContent);
                 var result = await response.Content.ReadAsStringAsync();
                 ResponseServer = JsonConvert.DeserializeObject<ResponseServer>(result);
                 if (!ResponseServer.Err)
@@ -348,7 +348,7 @@ namespace Baalak_Apps
                                 CbClientes.Items.Add(Client);
                             }
                             CbClientes.SelectedIndex = 0;
-                            if (BtnConnection.Text == "Connected to " + TxtCenter.Texts)
+                            if (BtnConnection.Text == "Connectado con " + TxtCenter.Texts)
                             {
                                 BtnIniciarEnvios.Enabled = true;
                             }
@@ -437,9 +437,9 @@ namespace Baalak_Apps
             ColoresBackColor();
             ColoresForeColor();
             ColorForeColorPdf = BaalakApps.Properties.Settings.Default.ReminderForeColorPdf;
-            url = "http://" + BaalakApps.Properties.Settings.Default.Url;
+            url = BaalakApps.Properties.Settings.Default.Url;
             TxtCenter.Texts = BaalakApps.Properties.Settings.Default.Center;
-            TxtIp.Texts = BaalakApps.Properties.Settings.Default.Url;
+            TxtId.Texts = BaalakApps.Properties.Settings.Default.CenterId;
             T1Recordatorios.Start();
             CbClientes.DisplayMember = "Nombre";
             CbClientes.ValueMember = "Indice";
@@ -635,11 +635,11 @@ namespace Baalak_Apps
 
         private async void BtnConnection_Click(object sender, EventArgs e)
         {
-            if (TxtCenter.Texts != "" && TxtIp.Texts != "")
+            if (TxtCenter.Texts != "" && TxtId.Texts != "")
             {
                 BtnConnection.Text = "Conectando...";
                 await GetStatusAsync();
-                if (BtnConnection.Text != "Connected to " + TxtCenter.Texts)
+                if (BtnConnection.Text != "Connectado con " + TxtCenter.Texts)
                 {
                     Thread.Sleep(3000);
                     BtnConnection.Text = "Conectarse a WhatsApp";
@@ -686,7 +686,7 @@ namespace Baalak_Apps
 
         private async void BtnIniciarEnvios_Click(object sender, EventArgs e)
         {
-            if (BtnConnection.Text == "Connected to " + TxtCenter.Texts)
+            if (BtnConnection.Text == "Connectado con " + TxtCenter.Texts)
             {
                 if (TxtMensaje.Text != "")
                 {
@@ -971,7 +971,7 @@ namespace Baalak_Apps
         #region LinkLabel
         private void Linkqr_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            OpenTarget(url + "/qr.png");
+            OpenTarget(url + "qr.png");
         }
         #endregion
 
@@ -1014,10 +1014,9 @@ namespace Baalak_Apps
             BaalakApps.Properties.Settings.Default.Save();
         }
 
-        private void TxtIp_TextsChanged(object sender, EventArgs e)
+        private void TxtId_TextsChanged(object sender, EventArgs e)
         {
-            url = "http://" + TxtIp.Texts;
-            BaalakApps.Properties.Settings.Default.Url = TxtIp.Texts;
+            BaalakApps.Properties.Settings.Default.CenterId = TxtId.Texts;
             BaalakApps.Properties.Settings.Default.Save();
         }
 

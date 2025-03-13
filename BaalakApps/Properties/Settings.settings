@@ -37,10 +37,13 @@
 &lt;/ArrayOfString&gt;</Value>
     </Setting>
     <Setting Name="Url" Type="System.String" Scope="User">
-      <Value Profile="(Default)">0.0.0.0</Value>
+      <Value Profile="(Default)">http://recordatorios.veterinariabaalak.com/</Value>
     </Setting>
     <Setting Name="Center" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Clinica veterinaria</Value>
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="CenterId" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>
