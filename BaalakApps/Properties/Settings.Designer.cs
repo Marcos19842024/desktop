@@ -138,18 +138,6 @@ namespace BaalakApps.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://recordatorios.veterinariabaalak.com/")]
-        public string Url {
-            get {
-                return ((string)(this["Url"]));
-            }
-            set {
-                this["Url"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string Center {
             get {

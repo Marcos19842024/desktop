@@ -31,7 +31,7 @@ namespace Baalak_Apps
         public static Color ColorBackColor;
         public static Color ColorForeColor;
         public static Color ColorForeColorPdf;
-        public string url;
+        public string url = "http://recordatorios.veterinariabaalak.com/";
         static readonly HttpClient Client = new HttpClient();
 
         public FrmRecordatorios()
@@ -137,9 +137,9 @@ namespace Baalak_Apps
                     MessageBox.Show("No se pudo eliminar el archivo.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("No estas conectado al servidor.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ex.Message, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -193,9 +193,9 @@ namespace Baalak_Apps
                 ResponseStatus = JsonConvert.DeserializeObject<ResponseStatus>(result);
                 BtnConnection.Text = ResponseStatus.StatusText;
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("No estas conectado al servidor.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ex.Message, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -227,9 +227,9 @@ namespace Baalak_Apps
                     MessageBox.Show("No se pudo cargar el archivo.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("No estas conectado al servidor.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ex.Message, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -348,7 +348,7 @@ namespace Baalak_Apps
                                 CbClientes.Items.Add(Client);
                             }
                             CbClientes.SelectedIndex = 0;
-                            if (BtnConnection.Text == "Connectado con " + TxtCenter.Texts)
+                            if (BtnConnection.Text == "Conectado con " + TxtCenter.Texts)
                             {
                                 BtnIniciarEnvios.Enabled = true;
                             }
@@ -437,7 +437,6 @@ namespace Baalak_Apps
             ColoresBackColor();
             ColoresForeColor();
             ColorForeColorPdf = BaalakApps.Properties.Settings.Default.ReminderForeColorPdf;
-            url = BaalakApps.Properties.Settings.Default.Url;
             TxtCenter.Texts = BaalakApps.Properties.Settings.Default.Center;
             TxtId.Texts = BaalakApps.Properties.Settings.Default.CenterId;
             T1Recordatorios.Start();
@@ -639,7 +638,7 @@ namespace Baalak_Apps
             {
                 BtnConnection.Text = "Conectando...";
                 await GetStatusAsync();
-                if (BtnConnection.Text != "Connectado con " + TxtCenter.Texts)
+                if (BtnConnection.Text != "Conectado con " + TxtCenter.Texts)
                 {
                     Thread.Sleep(3000);
                     BtnConnection.Text = "Conectarse a WhatsApp";
@@ -686,7 +685,7 @@ namespace Baalak_Apps
 
         private async void BtnIniciarEnvios_Click(object sender, EventArgs e)
         {
-            if (BtnConnection.Text == "Connectado con " + TxtCenter.Texts)
+            if (BtnConnection.Text == "Conectado con " + TxtCenter.Texts)
             {
                 if (TxtMensaje.Text != "")
                 {

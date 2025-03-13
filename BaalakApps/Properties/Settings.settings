@@ -36,9 +36,6 @@
   &lt;string&gt;ENVIOS DE PAQUETERIA&lt;/string&gt;
 &lt;/ArrayOfString&gt;</Value>
     </Setting>
-    <Setting Name="Url" Type="System.String" Scope="User">
-      <Value Profile="(Default)">http://recordatorios.veterinariabaalak.com/</Value>
-    </Setting>
     <Setting Name="Center" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>

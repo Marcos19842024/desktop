@@ -7,17 +7,12 @@ namespace BaalakApps
     public partial class FrmFile : Form
     {
         private readonly string File = string.Empty;
-        public string url;
+        public string url = "http://recordatorios.veterinariabaalak.com/media/";
 
         public FrmFile(string FileName)
         {
             File = FileName;
             InitializeComponent();
-        }
-
-        private void FrmFile_Load(object sender, EventArgs e)
-        {
-            url = "http://" + BaalakApps.Properties.Settings.Default.Url;
         }
 
         #region Botones
@@ -36,7 +31,7 @@ namespace BaalakApps
             if (Owner is FrmRecordatorios)
             {
                 FrmRecordatorios form = Owner as FrmRecordatorios;
-                form.OpenTarget(url + "/media/" + File);
+                form.OpenTarget(url + File);
             }
             Close();
         }
