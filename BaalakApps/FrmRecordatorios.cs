@@ -31,7 +31,8 @@ namespace Baalak_Apps
         public static Color ColorBackColor;
         public static Color ColorForeColor;
         public static Color ColorForeColorPdf;
-        public string url = "http://recordatorios.veterinariabaalak.com/";
+        //public string url = "http://recordatorios.veterinariabaalak.com/";
+        public string url = "http://animalia.veterinariabaalak.com/";
         static readonly HttpClient Client = new HttpClient();
 
         public FrmRecordatorios()
