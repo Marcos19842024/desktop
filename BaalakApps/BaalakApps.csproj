@@ -329,7 +329,7 @@
   <ItemGroup>
     <Content Include="Logo Small.ico" />
     <None Include="Resources\LogoAnimalia.png" />
-    <None Include="Resources\Logo.png" />
+    <None Include="Resources\LogoBaalak.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8.1">
