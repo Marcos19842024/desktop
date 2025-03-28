@@ -37,10 +37,13 @@
 &lt;/ArrayOfString&gt;</Value>
     </Setting>
     <Setting Name="Center" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">Animalia</Value>
     </Setting>
     <Setting Name="CenterId" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">9212650547</Value>
+    </Setting>
+    <Setting Name="Url" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://animalia.veterinariabaalak.com/</Value>
     </Setting>
   </Settings>
 </SettingsFile>

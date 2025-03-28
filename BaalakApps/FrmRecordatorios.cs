@@ -31,8 +31,9 @@ namespace Baalak_Apps
         public static Color ColorBackColor;
         public static Color ColorForeColor;
         public static Color ColorForeColorPdf;
-        //public string url = "http://recordatorios.veterinariabaalak.com/";
-        public string url = "http://animalia.veterinariabaalak.com/";
+        public string Url = BaalakApps.Properties.Settings.Default.Url;
+        public string Center = BaalakApps.Properties.Settings.Default.Center;
+        public string CenterId = BaalakApps.Properties.Settings.Default.CenterId;
         static readonly HttpClient Client = new HttpClient();
 
         public FrmRecordatorios()
@@ -115,7 +116,7 @@ namespace Baalak_Apps
             {
                 var request = new HttpRequestMessage
                 {
-                    RequestUri = new Uri(url + "delete/" + FileName),
+                    RequestUri = new Uri(Url + "delete/" + FileName),
                     Method = HttpMethod.Delete
                 };
                 request.Headers.Add("Accept", "*/*");
@@ -158,7 +159,7 @@ namespace Baalak_Apps
                 var bodyString = JsonConvert.SerializeObject(JF);
                 var request = new HttpRequestMessage
                 {
-                    RequestUri = new Uri(url + "send/" + TxtCenter.Texts + "/" + TxtId.Texts),
+                    RequestUri = new Uri(Url + "send/" + Center + "/" + CenterId),
                     Method = HttpMethod.Post
                 };
                 request.Headers.Add("Accept", "*/*");
@@ -184,7 +185,7 @@ namespace Baalak_Apps
             {
                 var request = new HttpRequestMessage
                 {
-                    RequestUri = new Uri(url + "status/" + TxtCenter.Texts + "/" + TxtId.Texts),
+                    RequestUri = new Uri(Url + "status/" + Center + "/" + CenterId),
                     Method = HttpMethod.Get
                 };
                 request.Headers.Add("Accept", "*/*");
@@ -210,7 +211,7 @@ namespace Baalak_Apps
                     var fileStream = File.OpenRead(file.Path);
                     requestContent.Add(new StreamContent(fileStream), "files", file.Name);
                 }
-                var response = await Client.PostAsync(url + "upload",requestContent);
+                var response = await Client.PostAsync(Url + "upload",requestContent);
                 var result = await response.Content.ReadAsStringAsync();
                 ResponseServer = JsonConvert.DeserializeObject<ResponseServer>(result);
                 if (!ResponseServer.Err)
@@ -349,7 +350,7 @@ namespace Baalak_Apps
                                 CbClientes.Items.Add(Client);
                             }
                             CbClientes.SelectedIndex = 0;
-                            if (BtnConnection.Text == "Conectado con " + TxtCenter.Texts)
+                            if (BtnConnection.Text == "Conectado con " + Center)
                             {
                                 BtnIniciarEnvios.Enabled = true;
                             }
@@ -438,8 +439,6 @@ namespace Baalak_Apps
             ColoresBackColor();
             ColoresForeColor();
             ColorForeColorPdf = BaalakApps.Properties.Settings.Default.ReminderForeColorPdf;
-            TxtCenter.Texts = BaalakApps.Properties.Settings.Default.Center;
-            TxtId.Texts = BaalakApps.Properties.Settings.Default.CenterId;
             T1Recordatorios.Start();
             CbClientes.DisplayMember = "Nombre";
             CbClientes.ValueMember = "Indice";
@@ -635,19 +634,12 @@ namespace Baalak_Apps
 
         private async void BtnConnection_Click(object sender, EventArgs e)
         {
-            if (TxtCenter.Texts != "" && TxtId.Texts != "")
+            BtnConnection.Text = "Conectando...";
+            await GetStatusAsync();
+            if (BtnConnection.Text != "Conectado con " + Center)
             {
-                BtnConnection.Text = "Conectando...";
-                await GetStatusAsync();
-                if (BtnConnection.Text != "Conectado con " + TxtCenter.Texts)
-                {
-                    Thread.Sleep(3000);
-                    BtnConnection.Text = "Conectarse a WhatsApp";
-                }
-            }
-            else
-            {
-                MessageBox.Show("Faltan información para conectarse al servidor.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Thread.Sleep(3000);
+                BtnConnection.Text = "Conectarse a WhatsApp";
             }
         }
 
@@ -686,7 +678,7 @@ namespace Baalak_Apps
 
         private async void BtnIniciarEnvios_Click(object sender, EventArgs e)
         {
-            if (BtnConnection.Text == "Conectado con " + TxtCenter.Texts)
+            if (BtnConnection.Text == "Conectado con " + Center)
             {
                 if (TxtMensaje.Text != "")
                 {
@@ -886,11 +878,11 @@ namespace Baalak_Apps
                         if (IncluirMO.Checked)
                         {
                             CargarMensajeOpcional();
-                            TxtMensaje.Text = "¡Hola " + ((Cliente)CbClientes.SelectedItem).Nombre + "!\r\n\r\nLa Clínica Veterinaria " + TxtCenter.Texts + ", le informa que " + ListPets() + "\r\n\r\n" + MensajeOpcional;
+                            TxtMensaje.Text = "¡Hola " + ((Cliente)CbClientes.SelectedItem).Nombre + "!\r\n\r\nLa Clínica Veterinaria " + Center + ", le informa que " + ListPets() + "\r\n\r\n" + MensajeOpcional;
                         }
                         else
                         {
-                            TxtMensaje.Text = "¡Hola " + ((Cliente)CbClientes.SelectedItem).Nombre + "!\r\n\r\nLa Clínica Veterinaria " + TxtCenter.Texts + ", le informa que " + ListPets();
+                            TxtMensaje.Text = "¡Hola " + ((Cliente)CbClientes.SelectedItem).Nombre + "!\r\n\r\nLa Clínica Veterinaria " + Center + ", le informa que " + ListPets();
                         }
                     }
                     else
@@ -971,7 +963,7 @@ namespace Baalak_Apps
         #region LinkLabel
         private void Linkqr_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            OpenTarget(url + "qr.png");
+            OpenTarget(Url + "qr.png");
         }
         #endregion
 
@@ -1008,18 +1000,6 @@ namespace Baalak_Apps
         #endregion
 
         #region TextBoxs
-        private void TxtCenter_TextsChanged(object sender, EventArgs e)
-        {
-            BaalakApps.Properties.Settings.Default.Center = TxtCenter.Texts;
-            BaalakApps.Properties.Settings.Default.Save();
-        }
-
-        private void TxtId_TextsChanged(object sender, EventArgs e)
-        {
-            BaalakApps.Properties.Settings.Default.CenterId = TxtId.Texts;
-            BaalakApps.Properties.Settings.Default.Save();
-        }
-
         //private void TxtMensaje_TextChanged(object sender, EventArgs e)
         //{
         //    int NumLine = 1;

@@ -48,8 +48,6 @@
             this.PanelConexion = new System.Windows.Forms.Panel();
             this.Linkqr = new System.Windows.Forms.LinkLabel();
             this.BtnConnection = new FontAwesome.Sharp.IconButton();
-            this.TxtId = new CustomControls.CustomTextBox();
-            this.TxtCenter = new CustomControls.CustomTextBox();
             this.BtnConexion = new FontAwesome.Sharp.IconButton();
             this.PanelMde = new System.Windows.Forms.Panel();
             this.IncluirMO = new System.Windows.Forms.CheckBox();
@@ -360,8 +358,6 @@
             this.PanelConexion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
             this.PanelConexion.Controls.Add(this.Linkqr);
             this.PanelConexion.Controls.Add(this.BtnConnection);
-            this.PanelConexion.Controls.Add(this.TxtId);
-            this.PanelConexion.Controls.Add(this.TxtCenter);
             this.PanelConexion.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelConexion.Location = new System.Drawing.Point(3, 75);
             this.PanelConexion.Margin = new System.Windows.Forms.Padding(0);
@@ -377,7 +373,7 @@
             this.Linkqr.Dock = System.Windows.Forms.DockStyle.Top;
             this.Linkqr.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Linkqr.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(120)))), ((int)(((byte)(160)))));
-            this.Linkqr.Location = new System.Drawing.Point(25, 69);
+            this.Linkqr.Location = new System.Drawing.Point(25, 23);
             this.Linkqr.Margin = new System.Windows.Forms.Padding(0);
             this.Linkqr.Name = "Linkqr";
             this.Linkqr.Size = new System.Drawing.Size(0, 23);
@@ -404,7 +400,7 @@
             this.BtnConnection.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(211)))), ((int)(((byte)(102)))));
             this.BtnConnection.IconFont = FontAwesome.Sharp.IconFont.Brands;
             this.BtnConnection.IconSize = 20;
-            this.BtnConnection.Location = new System.Drawing.Point(25, 46);
+            this.BtnConnection.Location = new System.Drawing.Point(25, 0);
             this.BtnConnection.Margin = new System.Windows.Forms.Padding(0);
             this.BtnConnection.Name = "BtnConnection";
             this.BtnConnection.Size = new System.Drawing.Size(0, 23);
@@ -414,64 +410,6 @@
             this.BtnConnection.Click += new System.EventHandler(this.BtnConnection_Click);
             this.BtnConnection.MouseLeave += new System.EventHandler(this.BtnConnection_MouseLeave);
             this.BtnConnection.MouseMove += new System.Windows.Forms.MouseEventHandler(this.BtnConnection_MouseMove);
-            // 
-            // TxtId
-            // 
-            this.TxtId.AllowDrop = true;
-            this.TxtId.BackColor = System.Drawing.SystemColors.Window;
-            this.TxtId.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.TxtId.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.TxtId.BorderRadius = 1;
-            this.TxtId.BorderSize = 2;
-            this.TxtId.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.TxtId.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.TxtId.Dock = System.Windows.Forms.DockStyle.Top;
-            this.TxtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.TxtId.ForeColor = System.Drawing.Color.Blue;
-            this.TxtId.IsReadOnly = false;
-            this.TxtId.Location = new System.Drawing.Point(25, 23);
-            this.TxtId.Margin = new System.Windows.Forms.Padding(0);
-            this.TxtId.Multiline = false;
-            this.TxtId.Name = "TxtId";
-            this.TxtId.Padding = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.TxtId.PasswordChar = false;
-            this.TxtId.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.TxtId.PlaceholderText = "Teléfono";
-            this.TxtId.Size = new System.Drawing.Size(0, 23);
-            this.TxtId.TabIndex = 25;
-            this.TxtId.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtId.Texts = "";
-            this.TxtId.UnderlinedStyle = true;
-            this.TxtId.TextsChanged += new System.EventHandler(this.TxtId_TextsChanged);
-            // 
-            // TxtCenter
-            // 
-            this.TxtCenter.AllowDrop = true;
-            this.TxtCenter.BackColor = System.Drawing.SystemColors.Window;
-            this.TxtCenter.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.TxtCenter.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.TxtCenter.BorderRadius = 1;
-            this.TxtCenter.BorderSize = 2;
-            this.TxtCenter.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.TxtCenter.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.TxtCenter.Dock = System.Windows.Forms.DockStyle.Top;
-            this.TxtCenter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.TxtCenter.ForeColor = System.Drawing.Color.Blue;
-            this.TxtCenter.IsReadOnly = false;
-            this.TxtCenter.Location = new System.Drawing.Point(25, 0);
-            this.TxtCenter.Margin = new System.Windows.Forms.Padding(0);
-            this.TxtCenter.Multiline = false;
-            this.TxtCenter.Name = "TxtCenter";
-            this.TxtCenter.Padding = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.TxtCenter.PasswordChar = false;
-            this.TxtCenter.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.TxtCenter.PlaceholderText = "Clinica veterinaria";
-            this.TxtCenter.Size = new System.Drawing.Size(0, 23);
-            this.TxtCenter.TabIndex = 43;
-            this.TxtCenter.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TxtCenter.Texts = "";
-            this.TxtCenter.UnderlinedStyle = true;
-            this.TxtCenter.TextsChanged += new System.EventHandler(this.TxtCenter_TextsChanged);
             // 
             // BtnConexion
             // 
@@ -1086,12 +1024,10 @@
         private System.Windows.Forms.GroupBox GbAdjuntar;
         private System.Windows.Forms.ListBox LbFileName;
         private System.Windows.Forms.CheckBox CheckAdjuntar;
-        private CustomControls.CustomTextBox TxtId;
         private FontAwesome.Sharp.IconButton BtnConnection;
         private FontAwesome.Sharp.IconButton BtnUpload;
         private System.Windows.Forms.CheckBox CheckNot;
         private System.Windows.Forms.CheckBox CheckRec;
-        private CustomControls.CustomTextBox TxtCenter;
         private System.Windows.Forms.LinkLabel Linkqr;
         private FontAwesome.Sharp.IconButton BtnTema;
         private FontAwesome.Sharp.IconButton BtnType;
