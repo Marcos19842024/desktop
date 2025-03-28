@@ -31,9 +31,12 @@ namespace Baalak_Apps
         public static Color ColorBackColor;
         public static Color ColorForeColor;
         public static Color ColorForeColorPdf;
-        public string Url = BaalakApps.Properties.Settings.Default.Url;
-        public string Center = BaalakApps.Properties.Settings.Default.Center;
-        public string CenterId = BaalakApps.Properties.Settings.Default.CenterId;
+        //public string url = "http://recordatorios.veterinariabaalak.com/";
+        //public string Center = "Baalak";
+        //public string CenterId = "9812062582";
+        public string url = "http://animalia.veterinariabaalak.com/";
+        public string Center = "Animalia";
+        public string CenterId = "9212650547";
         static readonly HttpClient Client = new HttpClient();
 
         public FrmRecordatorios()
@@ -116,7 +119,7 @@ namespace Baalak_Apps
             {
                 var request = new HttpRequestMessage
                 {
-                    RequestUri = new Uri(Url + "delete/" + FileName),
+                    RequestUri = new Uri(url + "delete/" + FileName),
                     Method = HttpMethod.Delete
                 };
                 request.Headers.Add("Accept", "*/*");
@@ -159,7 +162,7 @@ namespace Baalak_Apps
                 var bodyString = JsonConvert.SerializeObject(JF);
                 var request = new HttpRequestMessage
                 {
-                    RequestUri = new Uri(Url + "send/" + Center + "/" + CenterId),
+                    RequestUri = new Uri(url + "send/" + Center + "/" + CenterId),
                     Method = HttpMethod.Post
                 };
                 request.Headers.Add("Accept", "*/*");
@@ -185,7 +188,7 @@ namespace Baalak_Apps
             {
                 var request = new HttpRequestMessage
                 {
-                    RequestUri = new Uri(Url + "status/" + Center + "/" + CenterId),
+                    RequestUri = new Uri(url + "status/" + Center + "/" + CenterId),
                     Method = HttpMethod.Get
                 };
                 request.Headers.Add("Accept", "*/*");
@@ -194,6 +197,7 @@ namespace Baalak_Apps
                 var result = await response.Content.ReadAsStringAsync();
                 ResponseStatus = JsonConvert.DeserializeObject<ResponseStatus>(result);
                 BtnConnection.Text = ResponseStatus.StatusText;
+                MessageBox.Show(ResponseStatus.StatusText, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -211,7 +215,7 @@ namespace Baalak_Apps
                     var fileStream = File.OpenRead(file.Path);
                     requestContent.Add(new StreamContent(fileStream), "files", file.Name);
                 }
-                var response = await Client.PostAsync(Url + "upload",requestContent);
+                var response = await Client.PostAsync(url + "upload",requestContent);
                 var result = await response.Content.ReadAsStringAsync();
                 ResponseServer = JsonConvert.DeserializeObject<ResponseServer>(result);
                 if (!ResponseServer.Err)
@@ -570,7 +574,7 @@ namespace Baalak_Apps
 
         private void BtnConexion_Click(object sender, EventArgs e)
         {
-            if (PanelConexion.Height == 92)
+            if (PanelConexion.Height == 50)
             {
                 PanelConexion.Height = 0;
                 BtnConexion.BackColor = Color.FromArgb(31, 31, 31);
@@ -578,7 +582,7 @@ namespace Baalak_Apps
             else
             {
                 BtnConexion.BackColor = Color.FromArgb(60, 120, 160);
-                PanelConexion.Height = 92;
+                PanelConexion.Height = 50;
                 BtnTema.BackColor = Color.FromArgb(31, 31, 31);
                 PanelTema.Height = 0;
                 BtnMde.BackColor = Color.FromArgb(31, 31, 31);
@@ -963,7 +967,7 @@ namespace Baalak_Apps
         #region LinkLabel
         private void Linkqr_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            OpenTarget(Url + "qr.png");
+            OpenTarget(url + "qr.png");
         }
         #endregion
 
