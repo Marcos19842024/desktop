@@ -44,8 +44,8 @@ namespace Baalak_Apps
             if (Opacity == 0)
             {
                 Out.Stop();
-                //FrmAppsBox Frm = new FrmAppsBox();
-                FrmRecordatorios Frm = new FrmRecordatorios();
+                FrmAppsBox Frm = new FrmAppsBox();
+                //FrmRecordatorios Frm = new FrmRecordatorios();
                 Frm.Show();
                 Frm.FormClosed += LogOut;
                 Hide();
