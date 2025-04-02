@@ -640,7 +640,14 @@ namespace Baalak_Apps
         {
             BtnConnection.Text = "Conectando...";
             await GetStatusAsync();
-            if (BtnConnection.Text != "Conectado con " + Center)
+            if (BtnConnection.Text == "Conectado con " + Center)
+            {
+                if (CbClientes.Items.Count > 0)
+                {
+                    BtnIniciarEnvios.Enabled = true;
+                }
+            }
+            else
             {
                 Thread.Sleep(3000);
                 BtnConnection.Text = "Conectarse a WhatsApp";
@@ -796,16 +803,11 @@ namespace Baalak_Apps
             {
                 CheckNot.Checked = false;
                 GbMascotas.Visible = true;
-                TxtMensaje.ReadOnly = true;
-                IncluirMO.Enabled = true;
             }
             else
             {   
                 CheckNot.Checked = true;
                 GbMascotas.Visible = false;
-                TxtMensaje.ReadOnly = false;
-                IncluirMO.Checked = false;
-                IncluirMO.Enabled = false;
             }
             CbClientes.Items.Clear();
             CbClientes.Texts = "";
@@ -835,16 +837,11 @@ namespace Baalak_Apps
             {
                 CheckRec.Checked = false;
                 GbMascotas.Visible = false;
-                TxtMensaje.ReadOnly = false;
-                IncluirMO.Checked = false;
-                IncluirMO.Enabled = false;
             }
             else
             {
                 CheckRec.Checked = true;
                 GbMascotas.Visible = true;
-                TxtMensaje.ReadOnly = true;
-                IncluirMO.Enabled = true;
             }
             CbClientes.Items.Clear();
             CbClientes.Texts = "";
@@ -891,7 +888,7 @@ namespace Baalak_Apps
                     }
                     else
                     {
-                        TxtMensaje.Text = "¡Hola " + ((Cliente)CbClientes.SelectedItem).Nombre + "!\r\n\r\n";
+                        TxtMensaje.Text = "¡Hola " + ((Cliente)CbClientes.SelectedItem).Nombre + "!\r\n\r\n" + MensajeOpcional;
                     }
                     LblTelefono.Text = ((Cliente)CbClientes.SelectedItem).Telefono;
                 }
@@ -1004,6 +1001,10 @@ namespace Baalak_Apps
         #endregion
 
         #region TextBoxs
+        private void TxtMensajeOpcional_TextChanged(object sender, EventArgs e)
+        {
+            CbClientes_OnSelectedIndexChanged(null, null);
+        }
         //private void TxtMensaje_TextChanged(object sender, EventArgs e)
         //{
         //    int NumLine = 1;

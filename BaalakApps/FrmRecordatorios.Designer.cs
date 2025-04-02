@@ -646,6 +646,7 @@
             this.TxtMensajeOpcional.Name = "TxtMensajeOpcional";
             this.TxtMensajeOpcional.Size = new System.Drawing.Size(179, 131);
             this.TxtMensajeOpcional.TabIndex = 23;
+            this.TxtMensajeOpcional.TextChanged += new System.EventHandler(this.TxtMensajeOpcional_TextChanged);
             // 
             // GbAdjuntar
             // 
