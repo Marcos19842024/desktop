@@ -51,6 +51,7 @@
             this.LbClientes = new System.Windows.Forms.ListBox();
             this.PanelCliente = new System.Windows.Forms.Panel();
             this.CBFDP = new CustomControls.CustomComboBox();
+            this.TxtCajero = new CustomControls.CustomTextBox();
             this.BtnEliminar = new FontAwesome.Sharp.IconButton();
             this.LbFecha = new System.Windows.Forms.ListBox();
             this.T1 = new System.Windows.Forms.Timer(this.components);
@@ -67,7 +68,7 @@
             this.LblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblTitulo.Location = new System.Drawing.Point(0, 0);
             this.LblTitulo.Name = "LblTitulo";
-            this.LblTitulo.Size = new System.Drawing.Size(330, 25);
+            this.LblTitulo.Size = new System.Drawing.Size(385, 25);
             this.LblTitulo.TabIndex = 0;
             this.LblTitulo.Text = "Lista de transportes";
             this.LblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -81,7 +82,7 @@
             this.PPrincipal.Dock = System.Windows.Forms.DockStyle.Top;
             this.PPrincipal.Location = new System.Drawing.Point(0, 0);
             this.PPrincipal.Name = "PPrincipal";
-            this.PPrincipal.Size = new System.Drawing.Size(330, 25);
+            this.PPrincipal.Size = new System.Drawing.Size(385, 25);
             this.PPrincipal.TabIndex = 12;
             // 
             // BtnCerrar
@@ -100,7 +101,7 @@
             this.BtnCerrar.IconColor = System.Drawing.Color.White;
             this.BtnCerrar.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.BtnCerrar.IconSize = 15;
-            this.BtnCerrar.Location = new System.Drawing.Point(305, 0);
+            this.BtnCerrar.Location = new System.Drawing.Point(360, 0);
             this.BtnCerrar.Margin = new System.Windows.Forms.Padding(0);
             this.BtnCerrar.Name = "BtnCerrar";
             this.BtnCerrar.Size = new System.Drawing.Size(25, 25);
@@ -140,7 +141,7 @@
             this.LblFecha.ForeColor = System.Drawing.Color.White;
             this.LblFecha.Location = new System.Drawing.Point(0, 0);
             this.LblFecha.Name = "LblFecha";
-            this.LblFecha.Size = new System.Drawing.Size(326, 23);
+            this.LblFecha.Size = new System.Drawing.Size(381, 23);
             this.LblFecha.TabIndex = 0;
             this.LblFecha.Text = "lunes, 15 de marzo del 2024";
             this.LblFecha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -152,7 +153,7 @@
             this.LblNombreCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(120)))), ((int)(((byte)(160)))));
             this.LblNombreCliente.Location = new System.Drawing.Point(40, 23);
             this.LblNombreCliente.Name = "LblNombreCliente";
-            this.LblNombreCliente.Size = new System.Drawing.Size(286, 23);
+            this.LblNombreCliente.Size = new System.Drawing.Size(341, 23);
             this.LblNombreCliente.TabIndex = 1;
             this.LblNombreCliente.Text = "Cliente example";
             this.LblNombreCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -178,7 +179,7 @@
             this.GbMascotas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(120)))), ((int)(((byte)(160)))));
             this.GbMascotas.Location = new System.Drawing.Point(40, 46);
             this.GbMascotas.Name = "GbMascotas";
-            this.GbMascotas.Size = new System.Drawing.Size(286, 117);
+            this.GbMascotas.Size = new System.Drawing.Size(341, 97);
             this.GbMascotas.TabIndex = 13;
             this.GbMascotas.TabStop = false;
             this.GbMascotas.Text = "Mascotas";
@@ -252,7 +253,7 @@
             this.DgvData.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.DgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvData.ShowEditingIcon = false;
-            this.DgvData.Size = new System.Drawing.Size(280, 98);
+            this.DgvData.Size = new System.Drawing.Size(335, 78);
             this.DgvData.TabIndex = 7;
             this.DgvData.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvData_CellEndEdit);
             // 
@@ -276,13 +277,13 @@
             // 
             // Asunto
             // 
+            this.Asunto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle3.NullValue = null;
             this.Asunto.DefaultCellStyle = dataGridViewCellStyle3;
             this.Asunto.HeaderText = "Asunto";
             this.Asunto.Name = "Asunto";
-            this.Asunto.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Asunto.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Asunto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.Asunto.Width = 73;
             // 
             // LbClientes
             // 
@@ -291,10 +292,10 @@
             this.LbClientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(120)))), ((int)(((byte)(160)))));
             this.LbClientes.FormattingEnabled = true;
             this.LbClientes.ItemHeight = 15;
-            this.LbClientes.Location = new System.Drawing.Point(100, 241);
+            this.LbClientes.Location = new System.Drawing.Point(123, 241);
             this.LbClientes.Name = "LbClientes";
             this.LbClientes.ScrollAlwaysVisible = true;
-            this.LbClientes.Size = new System.Drawing.Size(230, 156);
+            this.LbClientes.Size = new System.Drawing.Size(262, 156);
             this.LbClientes.TabIndex = 14;
             this.LbClientes.SelectedIndexChanged += new System.EventHandler(this.LbClientes_SelectedIndexChanged);
             // 
@@ -303,6 +304,7 @@
             this.PanelCliente.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.PanelCliente.Controls.Add(this.GbMascotas);
             this.PanelCliente.Controls.Add(this.CBFDP);
+            this.PanelCliente.Controls.Add(this.TxtCajero);
             this.PanelCliente.Controls.Add(this.BtnEliminar);
             this.PanelCliente.Controls.Add(this.LblNombreCliente);
             this.PanelCliente.Controls.Add(this.LblHora);
@@ -310,14 +312,11 @@
             this.PanelCliente.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelCliente.Location = new System.Drawing.Point(0, 25);
             this.PanelCliente.Name = "PanelCliente";
-            this.PanelCliente.Size = new System.Drawing.Size(330, 216);
+            this.PanelCliente.Size = new System.Drawing.Size(385, 216);
             this.PanelCliente.TabIndex = 8;
             // 
             // CBFDP
             // 
-            this.CBFDP.AllowDrop = true;
-            this.CBFDP.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.CBFDP.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CBFDP.BackColor = System.Drawing.Color.White;
             this.CBFDP.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(120)))), ((int)(((byte)(160)))));
             this.CBFDP.BorderSize = 0;
@@ -332,20 +331,47 @@
             "Efectivo",
             "T.C.",
             "T.D.",
-            "Transferencia",
-            "Paga en caja",
+            "Pagó en caja",
             "No definido"});
             this.CBFDP.ListBackColor = System.Drawing.Color.White;
             this.CBFDP.ListTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(120)))), ((int)(((byte)(160)))));
-            this.CBFDP.Location = new System.Drawing.Point(40, 163);
+            this.CBFDP.Location = new System.Drawing.Point(40, 143);
             this.CBFDP.Margin = new System.Windows.Forms.Padding(0, 0, 1, 0);
             this.CBFDP.MinimumSize = new System.Drawing.Size(78, 20);
             this.CBFDP.Name = "CBFDP";
-            this.CBFDP.Size = new System.Drawing.Size(286, 24);
+            this.CBFDP.Size = new System.Drawing.Size(341, 24);
             this.CBFDP.Sorted = false;
             this.CBFDP.TabIndex = 19;
             this.CBFDP.Texts = "No definido";
             this.CBFDP.OnSelectedIndexChanged += new System.EventHandler(this.CBFDP_OnSelectedIndexChanged);
+            // 
+            // TxtCajero
+            // 
+            this.TxtCajero.BackColor = System.Drawing.Color.White;
+            this.TxtCajero.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(120)))), ((int)(((byte)(160)))));
+            this.TxtCajero.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(120)))), ((int)(((byte)(160)))));
+            this.TxtCajero.BorderRadius = 3;
+            this.TxtCajero.BorderSize = 1;
+            this.TxtCajero.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.TxtCajero.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TxtCajero.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.TxtCajero.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtCajero.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(120)))), ((int)(((byte)(160)))));
+            this.TxtCajero.IsReadOnly = false;
+            this.TxtCajero.Location = new System.Drawing.Point(40, 167);
+            this.TxtCajero.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.TxtCajero.Multiline = false;
+            this.TxtCajero.Name = "TxtCajero";
+            this.TxtCajero.Padding = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.TxtCajero.PasswordChar = false;
+            this.TxtCajero.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(120)))), ((int)(((byte)(160)))));
+            this.TxtCajero.PlaceholderText = "";
+            this.TxtCajero.Size = new System.Drawing.Size(341, 20);
+            this.TxtCajero.TabIndex = 8;
+            this.TxtCajero.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TxtCajero.Texts = "";
+            this.TxtCajero.UnderlinedStyle = true;
+            this.TxtCajero.TextsChanged += new System.EventHandler(this.TxtCajero_TextsChanged);
             // 
             // BtnEliminar
             // 
@@ -366,7 +392,7 @@
             this.BtnEliminar.Location = new System.Drawing.Point(40, 187);
             this.BtnEliminar.Margin = new System.Windows.Forms.Padding(0);
             this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.Size = new System.Drawing.Size(286, 25);
+            this.BtnEliminar.Size = new System.Drawing.Size(341, 25);
             this.BtnEliminar.TabIndex = 15;
             this.BtnEliminar.Text = "Quitar de la lista";
             this.BtnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -383,7 +409,7 @@
             this.LbFecha.Location = new System.Drawing.Point(0, 241);
             this.LbFecha.Name = "LbFecha";
             this.LbFecha.ScrollAlwaysVisible = true;
-            this.LbFecha.Size = new System.Drawing.Size(100, 156);
+            this.LbFecha.Size = new System.Drawing.Size(123, 156);
             this.LbFecha.TabIndex = 15;
             this.LbFecha.SelectedIndexChanged += new System.EventHandler(this.LbFecha_SelectedIndexChanged);
             // 
@@ -404,7 +430,7 @@
             this.AutoScroll = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(330, 397);
+            this.ClientSize = new System.Drawing.Size(385, 397);
             this.Controls.Add(this.LbClientes);
             this.Controls.Add(this.LbFecha);
             this.Controls.Add(this.PanelCliente);
@@ -439,12 +465,13 @@
         private System.Windows.Forms.Panel PanelCliente;
         private System.Windows.Forms.ListBox LbFecha;
         private System.Windows.Forms.DataGridView DgvData;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Raza;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Asunto;
         private FontAwesome.Sharp.IconButton BtnEliminar;
         private CustomControls.CustomComboBox CBFDP;
         private System.Windows.Forms.Timer T1;
         private System.Windows.Forms.Timer T2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Raza;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Asunto;
+        private CustomControls.CustomTextBox TxtCajero;
     }
 }

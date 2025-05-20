@@ -237,6 +237,8 @@ namespace Datos
                                         Indice = Index.ToString(),
                                         Hora = Hora,
                                         Nombre = Client,
+                                        Estatus = "No definido",
+                                        Observaciones = "",
                                         Mascota = new List<Mascota>
                                         {
                                             new Mascota()
@@ -256,8 +258,11 @@ namespace Datos
                             {
                                 Lista.LastOrDefault().Cliente.Add(new Cliente()
                                 {
+                                    Indice = Index.ToString(),
                                     Hora = Hora,
                                     Nombre = Client,
+                                    Estatus = "No definido",
+                                    Observaciones = "",
                                     Mascota = new List<Mascota>
                                     {
                                         new Mascota()

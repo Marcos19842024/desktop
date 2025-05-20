@@ -169,23 +169,23 @@ namespace Baalak_Apps
                         Mascotas.Asunto
                     });
                 }
-                if (string.IsNullOrEmpty(((Cliente)LbClientes.SelectedItem).Estatus))
+                foreach (string Fdp in CBFDP.Items)
                 {
-                    CBFDP.SelectedItem = "No definido";
-                }
-                else
-                {
-                    foreach (string Fdp in CBFDP.Items)
+                    if (Fdp == ((Cliente)LbClientes.SelectedItem).Estatus)
                     {
-
-                        if (Fdp == ((Cliente)LbClientes.SelectedItem).Estatus)
-                        {
-                            CBFDP.SelectedItem = Fdp;
-                            break;
-                        }
+                        CBFDP.SelectedItem = Fdp;
+                        break;
                     }
                 }
+                TxtCajero.Texts = ((Cliente)LbClientes.SelectedItem).Observaciones;
             }
+        }
+        #endregion
+
+        #region TextBoxs
+        private void TxtCajero_TextsChanged(object sender, EventArgs e)
+        {
+            ((Fecha)LbFecha.SelectedItem).Cliente[LbClientes.SelectedIndex].Observaciones = TxtCajero.Texts;
         }
         #endregion
 
@@ -213,6 +213,6 @@ namespace Baalak_Apps
             }
         }
         #endregion
-        #endregion        
+        #endregion
     }
 }

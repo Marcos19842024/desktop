@@ -313,8 +313,8 @@ namespace Datos
                                         Column.RelativeColumn();
                                         Column.ConstantColumn(90);
                                         Column.ConstantColumn(90);
-                                        Column.ConstantColumn(80);
-                                        Column.ConstantColumn(80);
+                                        Column.ConstantColumn(90);
+                                        Column.RelativeColumn();
                                     });
                                     Tabla.Header(Header =>
                                     {
@@ -322,7 +322,7 @@ namespace Datos
                                         Header.Cell().BorderHorizontal(0.5f).BorderColor("#D9D9D9").Padding(2).AlignCenter().Text("Mascota").FontSize(10).SemiBold();
                                         Header.Cell().BorderHorizontal(0.5f).BorderColor("#D9D9D9").Padding(2).AlignCenter().Text("Raza").FontSize(10).SemiBold();
                                         Header.Cell().BorderHorizontal(0.5f).BorderColor("#D9D9D9").Padding(2).AlignCenter().Text("Asunto").FontSize(10).SemiBold();
-                                        Header.Cell().BorderHorizontal(0.5f).BorderColor("#D9D9D9").Padding(2).AlignCenter().Text("Forma de pago").FontSize(10).SemiBold();
+                                        Header.Cell().BorderHorizontal(0.5f).BorderColor("#D9D9D9").Padding(2).AlignCenter().Text("Observaciones").FontSize(10).SemiBold();
                                     });
                                     Tabla.ExtendLastCellsToTableBottom();
                                     Tabla.Cell().Column(1).RowSpan(Convert.ToUInt32(Client.Mascota.Count)).BorderBottom(0.5f).BorderColor("#D9D9D9").Padding(2).AlignLeft().Text(Client.Nombre).FontColor(ColorForeColorPdf).Bold().FontSize(12);
@@ -333,7 +333,7 @@ namespace Datos
                                         Tabla.Cell().BorderBottom(0.5f).BorderColor("#D9D9D9").Padding(2).AlignLeft().Text(Client.Mascota[i].Asunto).FontColor(ColorForeColorPdf).FontSize(10);
                                         Tabla.Cell();
                                     }
-                                    Tabla.Cell().Column(5).RowSpan(Convert.ToUInt32(Client.Mascota.Count)).BorderBottom(0.5f).BorderColor("#D9D9D9").Padding(2).AlignCenter().Text(Client.Estatus).FontColor(ColorForeColorPdf).FontSize(10);
+                                    Tabla.Cell().Column(5).RowSpan(Convert.ToUInt32(Client.Mascota.Count)).BorderBottom(0.5f).BorderColor("#D9D9D9").Padding(2).AlignCenter().Text("Forma de pago: " + Client.Estatus + "\r\n" + Client.Observaciones).FontColor(ColorForeColorPdf).FontSize(10);
                                     Tabla.Footer(footer =>
                                     {
                                         footer.Cell().ColumnSpan(5).LineHorizontal(0.51f).LineColor(ColorForeColorPdf);
